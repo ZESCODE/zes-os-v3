@@ -5,11 +5,11 @@
 [![SSE](https://img.shields.io/badge/Realtime-SSE-green)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 [![License](https://img.shields.io/badge/License-MIT-orange)](LICENSE)
 
-A real-time workflow dashboard for visualizing multi-stage work, live agent status, flow metrics, and bottlenecks. It uses the Next.js App Router, Server-Sent Events (SSE), and an event-driven data model to keep the UI synchronized with backend state. [web:30][web:22][web:25]
+A real-time workflow dashboard for visualizing multi-stage work, live agent status, flow metrics, and bottlenecks. It uses the Next.js App Router, Server-Sent Events (SSE), and an event-driven data model to keep the UI synchronized with backend state.
 
 ## Overview
 
-Workflow Mesh Dashboard is built for teams that need a live operational view of work moving through stages such as Planning, Research, Coding, Review, and Delivery. It combines a workflow board, KPI strip, event feed, and analytics charts so operators can see both the current state and the historical flow of work. [web:22][web:25][web:81]
+Workflow Mesh Dashboard is built for teams that need a live operational view of work moving through stages such as Planning, Research, Coding, Review, and Delivery. It combines a workflow board, KPI strip, event feed, and analytics charts so operators can see both the current state and the historical flow of work.
 
 The dashboard focuses on core Kanban metrics: lead time, cycle time, throughput, and WIP. These metrics help reveal bottlenecks, describe system capacity, and improve predictability.
 
