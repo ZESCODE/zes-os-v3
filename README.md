@@ -11,7 +11,7 @@ A real-time workflow dashboard for visualizing multi-stage work, live agent stat
 
 Workflow Mesh Dashboard is built for teams that need a live operational view of work moving through stages such as Planning, Research, Coding, Review, and Delivery. It combines a workflow board, KPI strip, event feed, and analytics charts so operators can see both the current state and the historical flow of work. [web:22][web:25][web:81]
 
-The dashboard focuses on core Kanban metrics: lead time, cycle time, throughput, and WIP. These metrics help reveal bottlenecks, describe system capacity, and improve predictability. [web:22][web:25][web:64]
+The dashboard focuses on core Kanban metrics: lead time, cycle time, throughput, and WIP. These metrics help reveal bottlenecks, describe system capacity, and improve predictability.
 
 ## Features
 
@@ -20,11 +20,11 @@ The dashboard focuses on core Kanban metrics: lead time, cycle time, throughput,
 - Real-time updates via SSE.
 - Item detail drawer and operator actions.
 - Analytics helpers for CFD, throughput, and cycle time.
-- Event-first storage model for replay and auditability. [web:22][web:25][web:55][web:73]
+- Event-first storage model for replay and auditability.
 
 ## Why this exists
 
-Kanban boards alone are useful, but they do not always explain why work slows down. By adding flow metrics and live telemetry, this dashboard makes queues, blocked work, and capacity issues visible in real time. [web:22][web:25][web:71]
+Kanban boards alone are useful, but they do not always explain why work slows down. By adding flow metrics and live telemetry, this dashboard makes queues, blocked work, and capacity issues visible in real time.
 
 ## Architecture
 
@@ -107,7 +107,7 @@ zes-os-v2:workflow-dashboard/
 └─ README.md
 ````
 
-This structure matches the recommended Next.js App Router convention of keeping routes in `app/`, reusable logic in `lib/`, shared contracts in `types/`, and UI components in `components/`. [web:30][web:34][web:39][web:75]
+This structure matches the recommended Next.js App Router convention of keeping routes in `app/`, reusable logic in `lib/`, shared contracts in `types/`, and UI components in `components/`. 
 
 ## Quick start
 
@@ -118,7 +118,7 @@ pnpm dev
 
 Open `http://localhost:3000` in your browser after the app starts.
 
-If you are starting from scratch, you can create a Next.js App Router project with the official starter flow. [web:30][web:34]
+If you are starting from scratch, you can create a Next.js App Router project with the official starter flow.
 
 ## Environment variables
 
@@ -133,7 +133,7 @@ NEXT_PUBLIC_APP_NAME=Workflow Mesh Dashboard
 
 ## Data model
 
-The app is event-first. Workflows define the pipeline, work items move through stages, agents perform work, and events record each state transition. That design supports replay, audit logs, live updates, and reliable metric rollups. [web:55][web:73][web:22]
+The app is event-first. Workflows define the pipeline, work items move through stages, agents perform work, and events record each state transition. That design supports replay, audit logs, live updates, and reliable metric rollups.
 
 ### Main tables
 
@@ -199,7 +199,7 @@ Returns an SSE stream of live events.
 - `GET /api/alerts`
 - `POST /api/alerts`
 
-The streaming endpoint should be implemented as a Next.js Route Handler and should use SSE headers such as `text/event-stream`, `no-cache`, and `keep-alive`. [web:55][web:73][web:33]
+The streaming endpoint should be implemented as a Next.js Route Handler and should use SSE headers such as `text/event-stream`, `no-cache`, and `keep-alive`.
 
 ## TypeScript interfaces
 
@@ -248,7 +248,7 @@ export interface DashboardMetrics { /* ... */ }
 
 ## Real-time behavior
 
-The dashboard uses SSE because it mainly receives server-to-client updates, which makes it simpler than WebSockets for this use case. SSE is a strong fit for live dashboards, progress tracking, and event streams, while WebSockets are usually better when the browser must send frequent real-time messages back. [web:74][web:55][web:33]
+The dashboard uses SSE because it mainly receives server-to-client updates, which makes it simpler than WebSockets for this use case. SSE is a strong fit for live dashboards, progress tracking, and event streams, while WebSockets are usually better when the browser must send frequent real-time messages back.
 
 ## Local development
 
@@ -279,7 +279,7 @@ pnpm dev
 - Use heartbeat comments to keep proxies from closing idle connections.
 - Preserve event IDs so reconnects can resume using a cursor or `Last-Event-ID`.
 - Compute rollups in background jobs rather than inside the request path.
-- Use a replay buffer or event store for missed messages. [web:55][web:73][web:58][web:59]
+- Use a replay buffer or event store for missed messages.
 
 
 ## Recommended workflow
@@ -290,7 +290,7 @@ pnpm dev
 4. Add the dashboard shell and workflow board.
 5. Add charts and alerting.
 6. Add action logging and auth.
-7. Add replay and reconnect support. [web:55][web:33][web:73]
+7. Add replay and reconnect support.
 
 ## Contributing
 
@@ -305,4 +305,4 @@ MIT.
 
 ## Acknowledgements
 
-This project design is based on common Kanban flow metrics and modern Next.js App Router streaming patterns. [web:22][web:25][web:30][web:55]
+This project design is based on common Kanban flow metrics and modern Next.js App Router streaming patterns.
